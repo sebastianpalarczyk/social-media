@@ -1,14 +1,19 @@
 import React from "react";
 import Main from "../../common/Main";
-import Section from "../../Container/Section";
+import Section from "../../common/Section";
 import Naviation from "../../common/Navigation";
-import Container from "../../Container";
+import Container from "../../common/Container";
+import Posts from "./Posts";
 
 const HomePage = () => {
   return (
     <Main>
       <Naviation />
-      <Container/>
+      <Container>
+        <Section/>
+        <Section body={<Posts/>}/>
+        <Section/>
+      </Container>
     </Main>
   )
 }
