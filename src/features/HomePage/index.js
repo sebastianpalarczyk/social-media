@@ -4,6 +4,7 @@ import Section from "../../common/Section";
 import Naviation from "../../common/Navigation";
 import Container from "../../common/Container";
 import Posts from "./Posts";
+import AddNewPost from "./AddNewPost";
 
 const HomePage = () => {
   return (
@@ -11,7 +12,8 @@ const HomePage = () => {
       <Naviation />
       <Container>
         <Section/>
-        <Section body={<Posts/>}/>
+        <Section header={<AddNewPost/>}
+        body={<Posts/>}/>
         <Section/>
       </Container>
     </Main>
