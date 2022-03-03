@@ -1,10 +1,12 @@
 import React from "react";
 import Container from "../../common/Container";
 import { Section } from "../../common/Section/styled";
+import Naviation from "../../common/Navigation";
 
 const HomePage = () => {
     return (
         <Container>
+         <Naviation/>
          <Section>
            sekcja 1
          </Section>
