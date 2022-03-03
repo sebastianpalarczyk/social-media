@@ -13,6 +13,10 @@ export const List = styled.ul`
 
 export const Item = styled.li`
     margin: 10px;
-    font-size: 20px;
+    font-size: 30px;
+`;
+
+export const Link = styled.span`
+    margin: 10px;
 `;
 

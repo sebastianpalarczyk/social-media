@@ -1,23 +1,16 @@
 import React from "react";
-import Container from "../../common/Container";
-import { Section } from "../../common/Section/styled";
+import Main from "../../common/Main";
+import Section from "../../Container/Section";
 import Naviation from "../../common/Navigation";
+import Container from "../../Container";
 
 const HomePage = () => {
-    return (
-        <Container>
-         <Naviation/>
-         <Section>
-           sekcja 1
-         </Section>
-         <Section>
-           sekcja 2
-         </Section>
-         <Section>
-           sekcja 3
-         </Section>
-        </Container>
-    )
+  return (
+    <Main>
+      <Naviation />
+      <Container/>
+    </Main>
+  )
 }
 
 export default HomePage;

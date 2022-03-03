@@ -7,7 +7,7 @@ const App = () => {
     <HashRouter>
       <Switch>
         <Route path="/">
-           <HomePage/>
+          <HomePage />
         </Route>
       </Switch>
     </HashRouter>

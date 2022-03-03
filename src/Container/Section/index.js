@@ -1,11 +1,9 @@
 import React from "react";
-import { Section } from "./styled";
+import { Container } from "./styled";
 
 const Section = () => {
     return (
-        <Section>
-
-        </Section>
+        <Container></Container>
     )
 }
 
