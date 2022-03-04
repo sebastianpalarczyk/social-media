@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
+import { HashRouter, Switch, Route, Link } from "react-router-dom";
 import HomePage from "./features/HomePage";
 import LoginPage from "./features/LoginPage";
 import { toApp, toLogin } from "./routes";
@@ -7,16 +7,21 @@ import { toApp, toLogin } from "./routes";
 const App = () => {
   return (
     <HashRouter>
+      <ul>
+        <li>
+           <Link to="login">Login</Link>
+        </li>
+        <li>
+          <Link to="/app">App</Link>
+        </li>
+      </ul>
       <Switch>
-        <Route path={toApp()}>
+        <Route path="/app">
           <HomePage />
         </Route>
-        <Route path={toLogin()}>
+        <Route path="/login">
           <LoginPage />
         </Route>
-        <Route path="/">
-                <Redirect to={toLogin()} />
-            </Route>
       </Switch>
     </HashRouter>
   );

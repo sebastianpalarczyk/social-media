@@ -1,14 +1,13 @@
 import React from "react";
-import { Container } from "./styled";
-import LoginButton from "./LoginButton";
-import LoginInput from "./Input";
+import { Container, Input, Button } from "./styled";
+
 
 const Form = () => {
     return (
         <Container>
-            <LoginInput placeholder="login" />
-            <LoginInput placeholder="hasło" />
-            <LoginButton />
+            <Input placeholder="login" />
+            <Input placeholder="hasło" />
+            <Button>Zaloguj</Button>
         </Container>
     )
 }

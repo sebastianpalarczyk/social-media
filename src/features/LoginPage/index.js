@@ -1,13 +1,13 @@
 import React from "react";
 import Form from "./Form";
-import { Container} from "./styled";
+import { Main} from "./styled";
 
-const Main = () => {
+const LoginPage = () => {
     return (
-        <Container>
+        <Main>
             <Form />
-        </Container>
+        </Main>
     )
 }
 
-export default Main;
+export default LoginPage;
