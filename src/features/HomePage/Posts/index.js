@@ -1,16 +1,30 @@
 import React from "react";
-import Comments from "./Comments";
-import File from "./File";
-import Header from "./Header";
-import { Container } from "./styled";
+import { useSelector } from "react-redux";
+import { selectPosts } from "./postsSlice";
+import { Container, Header, Comment, FilePost } from "./styled";
+import fantasy from "../../../images/fantasy.jpg";
 
 const Posts = () => {
+
+    const { posts } = useSelector(selectPosts);
+    console.log(posts)
+
     return (
-        <Container>
-            <Header/>
-            <File />
-            <Comments/>
-        </Container>
+
+        <>
+            {posts.map(post => (
+                <Container>
+                    <Header>
+                        {post.content}
+                    </Header>
+                    <FilePost src={fantasy} alt="obrazek" width={750}/>
+                    <Comment>
+                        {post.comment}
+                    </Comment>
+                </Container>
+            ))}
+
+        </>
     )
 }
 

@@ -9,17 +9,17 @@ const App = () => {
     <HashRouter>
       <ul>
         <li>
-           <Link to="login">Login</Link>
+           <Link to={toLogin()}>Login</Link>
         </li>
         <li>
-          <Link to="/app">App</Link>
+          <Link to={toApp()}>App</Link>
         </li>
       </ul>
       <Switch>
-        <Route path="/app">
+        <Route path={toApp()}>
           <HomePage />
         </Route>
-        <Route path="/login">
+        <Route path={toLogin()}>
           <LoginPage />
         </Route>
       </Switch>
