@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import post from "../../../images/fantasy.jpg";
+
 
 export const Container = styled.div`
     background-color: ${({theme}) => theme.color.post};
@@ -14,6 +14,6 @@ export const Comment = styled.div`
     padding: 30px;
 `;
 
-export const FilePost = styled.img`
+export const File = styled.img`
     
 `;
