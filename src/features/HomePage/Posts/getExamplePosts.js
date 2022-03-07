@@ -1,10 +1,11 @@
+import axios from "axios";
 
 export const getExamplePosts = async () => {
-    const response = await fetch("/social-media/examplePosts.json");
- 
-    if(!response.ok){
+    const response = await axios.get(`/social-media/example.json`);
+
+    if (!response.ok) {
         new Error(response.statusText);
     }
- 
-    return await response.json();
- };
+
+    return await response.data;
+}

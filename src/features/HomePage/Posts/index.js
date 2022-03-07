@@ -13,7 +13,7 @@ const Posts = () => {
 
         <>
             {posts.map(post => (
-                <Container>
+                <Container key={post.id}>
                     <Header>
                         {post.content}
                     </Header>
