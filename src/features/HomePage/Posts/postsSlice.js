@@ -5,12 +5,14 @@ const postsSlice = createSlice({
     name: "posts",
     initialState: {
         posts: [{
-            content:"Content numer jeden",
+            id:"1",
+            message:"Content numer jeden",
             comment:"Comment numer jeden",
     
         },
         {
-            content:"Content numer dwa",
+            id:"2",
+            message:"Content numer dwa",
             comment:"Comment numer dwa",
         }],
     },

@@ -1,11 +1,11 @@
 [
     {
-        "content":"Opis postu numer jeden ",
+        "message":"Opis postu numer jeden ",
         "comment":"Komentarz postu numer jeden "
 
     },
     {
-        "content":"Opis postu numer dwa ",
+        "message":"Opis postu numer dwa ",
         "comment":"Komentarz postu numer dwa "
     }
 ]

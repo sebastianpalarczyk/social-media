@@ -15,7 +15,7 @@ const Posts = () => {
             {posts.map(post => (
                 <Container key={post.id}>
                     <Header>
-                        {post.content}
+                        {post.message}
                     </Header>
                     <File src={fantasy} alt="obrazek" width={750}/>
                     <Comment>
