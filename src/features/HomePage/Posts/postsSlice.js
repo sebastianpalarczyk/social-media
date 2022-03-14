@@ -5,20 +5,20 @@ const postsSlice = createSlice({
     name: "posts",
     initialState: {
         posts: [{
-            id:"1",
-            message:"Content numer jeden",
-            comment:"Comment numer jeden",
-    
+            id: "1",
+            message: "Content numer jeden",
+            comment: "Comment numer jeden",
+
         },
         {
-            id:"2",
-            message:"Content numer dwa",
-            comment:"Comment numer dwa",
+            id: "2",
+            message: "Content numer dwa",
+            comment: "Comment numer dwa",
         }],
     },
-    reducers:{
-        fetchExamplePosts: () => {},
-        setPosts: (state, {payload: posts}) => {
+    reducers: {
+        fetchExamplePosts: () => { },
+        setPosts: (state, { payload: posts }) => {
             state.posts = posts;
         },
 

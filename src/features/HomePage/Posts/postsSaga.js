@@ -13,6 +13,5 @@ function* fetchExamplePostsHandler() {
 }
 
 export function* postsSaga(){
-    console.log("Saga jest podłączona")
     yield takeEvery(fetchExamplePosts.type, fetchExamplePostsHandler);
 }
