@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.form`
+export const Form = styled.form`
     border: solid black;
     color: black;
 `;
