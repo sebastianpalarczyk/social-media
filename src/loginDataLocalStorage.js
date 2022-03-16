@@ -4,4 +4,4 @@ export const saveLoginDataInLocalStorage = token =>
     localStorage.setItem(localStorageKey, JSON.stringify(token));
 
 export const getLoginDataInLocalStorage = () =>
-    JSON.parse(localStorage.getItem(localStorageKey)) || {};
+    JSON.parse(localStorage.getItem(localStorageKey)) || "null";

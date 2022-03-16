@@ -1,7 +1,7 @@
 import { call, select, takeEvery } from "redux-saga/effects";
 import { selectLogin } from "./loginSlice";
 import { sendLoginData } from "./sendLoginData";
-import { saveLoginDataInLocalStorage } from "./loginDataLocalStorage";
+import { saveLoginDataInLocalStorage } from "../../loginDataLocalStorage";
 
 function* sendLoginHandler() {
     try {

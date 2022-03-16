@@ -3,21 +3,19 @@ import { useDispatch } from "react-redux";
 import { addLogin } from "../loginSlice";
 import { Form, Input, Button } from "./styled";
 
-
 const FormLogin = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    
 
     const dispatch = useDispatch();
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        
+
         dispatch(addLogin({
             username,
             password
-        })); 
+        }));
     }
 
     return (

@@ -6,15 +6,16 @@ import Container from "../../common/Container";
 import Posts from "./Posts";
 import AddNewPost from "./AddNewPost";
 
+
 const HomePage = () => {
   return (
     <Main>
       <Naviation />
       <Container>
-        <Section/>
-        <Section header={<AddNewPost/>}
-        body={<Posts/>}/>
-        <Section/>
+        <Section />
+        <Section header={<AddNewPost />}
+          body={<Posts />} />
+        <Section />
       </Container>
     </Main>
   )
