@@ -1,18 +1,16 @@
 import React from "react";
-import Dashboard from "../../features/Dashboard";
-import LoginPage from "../../features/LoginPage";
-import {getLoginDataInLocalStorage} from "../../loginDataLocalStorage";
+import useLogin from "../../useLogin";
+import { useSelector } from "react-redux";
+import { selectToken } from "../../tokenSlice";
 
 const HomePage = () => {
-    const token = getLoginDataInLocalStorage("token");
-    if (token === "null") {
-        return (
-            <LoginPage />
-        )
-    }
+    const token = useSelector(selectToken);
+    const view = useLogin(token);
+
     return (
-        <Dashboard />
-    )
+        <main>
+            {view}
+        </main>)
 }
 
 export default HomePage;
