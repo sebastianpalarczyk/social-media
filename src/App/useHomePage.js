@@ -2,7 +2,7 @@ import React from "react";
 import Dashboard from "./features/Dashboard";
 import LoginPage from "./features/LoginPage";
 
-const useLogin = (token) => {
+const useHomePage = (token) => {
     let view;
 
     if (token === "null") {
@@ -13,4 +13,4 @@ const useLogin = (token) => {
     return view;
 }
 
-export default useLogin; 
+export default useHomePage; 
