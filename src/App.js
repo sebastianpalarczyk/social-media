@@ -1,14 +1,10 @@
 import React from "react";
 import { HashRouter, Switch, Route, Link, } from "react-router-dom";
-import HomePage from "./features/HomePage";
 import LoginPage from "./features/LoginPage";
 import { toApp, toLogin } from "./routes";
-import { getLoginDataInLocalStorage } from "./loginDataLocalStorage";
+import HomePage from "./common/HomePage";
 
 const App = () => {
-  const token = getLoginDataInLocalStorage("token");
-  console.log(token)
-
   return (
     <HashRouter>
       <ul>

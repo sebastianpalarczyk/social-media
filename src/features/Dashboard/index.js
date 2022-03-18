@@ -6,8 +6,7 @@ import Container from "../../common/Container";
 import Posts from "./Posts";
 import AddNewPost from "./AddNewPost";
 
-
-const HomePage = () => {
+const Dashboard = () => {
   return (
     <Main>
       <Naviation />
@@ -21,4 +20,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage;
+export default Dashboard;
