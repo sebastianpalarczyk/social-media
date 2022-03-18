@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import postsReducer from './features/HomePage/Posts/postsSlice';
-import loginReducer from './features/LoginPage/loginSlice';
+import postsReducer from '../App/features/Dashboard/Posts/postsSlice';
+import loginReducer from '../App/features/LoginPage/loginSlice';
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./rootSaga";
 

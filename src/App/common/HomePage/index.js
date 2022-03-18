@@ -1,9 +1,9 @@
 import React from "react";
-import { getLoginDataInLocalStorage } from "../../loginDataLocalStorage";
-import HomePage from "../../features/Dashboard";
+import Dashboard from "../../features/Dashboard";
 import LoginPage from "../../features/LoginPage";
+import {getLoginDataInLocalStorage} from "../../loginDataLocalStorage";
 
-const Home = () => {
+const HomePage = () => {
     const token = getLoginDataInLocalStorage("token");
     if (token === "null") {
         return (
@@ -11,8 +11,8 @@ const Home = () => {
         )
     }
     return (
-        <HomePage />
+        <Dashboard />
     )
 }
 
-export default Home;
+export default HomePage;
