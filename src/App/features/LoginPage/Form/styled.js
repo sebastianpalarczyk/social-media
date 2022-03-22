@@ -9,15 +9,16 @@ export const Form = styled.form`
     background-color: ${({theme}) => theme.color.white};
     border-radius: 6px;
     max-width: 400px;
-    border: solid 1px ${({theme}) => theme.color.grey};
+    border: solid 1px ${({theme}) => theme.color.alto};
+    box-shadow: 0 0 5px ${({theme}) => theme.color.alto};
 `;
 
 export const Input = styled.input`
     font-size: 17px;
-    border: solid 1px ${({theme}) => theme.color.grey};
+    border: solid 1px ${({theme}) => theme.color.alto};
     border-radius: 6px;
     background: none; 
-    color: ${({theme}) => theme.color.grey};
+    color: ${({theme}) => theme.color.alto};
     padding: 15px;
     margin: 10px;
 `;
@@ -41,7 +42,7 @@ export const Button = styled.button`
 export const Span = styled.span`
     margin: 10px;
     padding: 15px;
-    border-bottom: solid 1px ${({theme}) => theme.color.grey};
+    border-bottom: solid 1px ${({theme}) => theme.color.alto};
     text-align: center;
     color: ${({theme}) => theme.color.blue};
 `;
