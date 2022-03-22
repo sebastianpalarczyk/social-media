@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addLogin } from "../loginSlice";
-import { Form, Input, Button } from "./styled";
+import { Form, Input, Button, Span } from "./styled";
 
 const FormLogin = () => {
     const [username, setUsername] = useState("");
@@ -22,13 +22,14 @@ const FormLogin = () => {
         <Form onSubmit={onFormSubmit}>
             <Input
                 value={username}
-                placeholder="Login"
+                placeholder="Adres e-mail"
                 onChange={({ target }) => setUsername(target.value)} />
             <Input
                 value={password}
                 placeholder="Hasło"
                 onChange={({ target }) => setPassword(target.value)} />
             <Button>Zaloguj</Button>
+            <Span>Nie pamiętasz hasła?</Span>
         </Form>
     )
 }
