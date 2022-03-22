@@ -30,6 +30,7 @@ const FormLogin = () => {
                 onChange={({ target }) => setPassword(target.value)} />
             <Button>Zaloguj</Button>
             <Span>Nie pamiętasz hasła?</Span>
+            <Button primary>Utwórz nowe konto</Button>
         </Form>
     )
 }

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import theme from "../../../theme";
 
 export const Form = styled.form`
@@ -32,6 +32,10 @@ export const Button = styled.button`
     padding: 0 16px;
     cursor: pointer;
     color: ${({theme}) => theme.color.white};
+
+    ${({ primary }) => primary && css`
+    background: ${({theme}) => theme.color.green};
+    `}
 `;
 
 export const Span = styled.span`
