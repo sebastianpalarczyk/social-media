@@ -3,6 +3,7 @@ import { HashRouter, Switch, Route, Link, } from "react-router-dom";
 import LoginPage from "./features/LoginPage";
 import { toApp, toLogin } from "./routes";
 import HomePage from "./common/HomePage";
+import Dashboard from "./features/Dashboard";
 
 const App = () => {
   return (
@@ -17,7 +18,7 @@ const App = () => {
       </ul>
       <Switch>
         <Route path={toApp()}>
-          <HomePage />
+          <Dashboard />
         </Route>
         <Route path={toLogin()}>
           <LoginPage />

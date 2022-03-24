@@ -1,15 +1,16 @@
 import React from "react";
-import { List, Item, Link } from "./styled";
+import { List, Item, Link, Picture, NavigationContainer } from "./styled";
+import { ReactComponent as HomepageIcon } from "../../images/home-page.svg";
 
 const Navigation = () => {
   return (
-    <nav>
+    <NavigationContainer>
       <List>
         <Item>
           <Link>Logo</Link>
         </Item>
         <Item>
-          <Link>Strona główna</Link>
+          <Link><HomepageIcon/></Link>
           <Link>Strony</Link>
           <Link>Watch</Link>
           <Link>MarketPlace</Link>
@@ -22,7 +23,7 @@ const Navigation = () => {
           <Link>Konto</Link>
         </Item>
       </List>
-    </nav>
+    </NavigationContainer>
   )
 }
 
