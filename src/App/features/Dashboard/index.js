@@ -7,8 +7,9 @@ import Posts from "./Posts";
 import AddNewPost from "./AddNewPost";
 
 const Dashboard = () => {
+  const primary = "primary";
   return (
-    <Main>
+    <Main primary={primary}>
       <Naviation />
       <Container>
         <Section />

@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "./styled";
 
-const Section = ({ header, body }) => {
+const Section = ({ header, body, primary }) => {
     return (
         <Container>
             {header}
