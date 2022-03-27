@@ -5,12 +5,13 @@ import { Form, Input, Button } from "./styled";
 
 const AddNewPost = () => {
     const [message, setMessage] = useState("");
-    const [file, setFile] = useState();
+    const [file, setFile] = useState("");
 
     const dispatch = useDispatch();
 
     const onFormSubmit = (event) => {
         event.preventDefault();
+        console.log(file)
 
         dispatch(addPost({
             message,
@@ -19,7 +20,7 @@ const AddNewPost = () => {
     }
 
     return (
-        <Form onSubmit={onFormSubmit}>
+        <Form onSubmit={onFormSubmit} encType="multipart/form-data">
             <Input
                 value={message}
                 placeholder="O czym teraz myślisz?"
@@ -27,7 +28,7 @@ const AddNewPost = () => {
             <Input
                 type="file"
                 value={file}
-                onChange={({ target }) => setFile(target.value)} />
+                onChange={({ target }) => this.setFile(target)} />
             <Button>Dodaj post</Button>
         </Form>
     )
