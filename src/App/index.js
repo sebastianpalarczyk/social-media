@@ -18,7 +18,7 @@ const App = () => {
       </ul>
       <Switch>
         <Route path={toApp()}>
-          <Dashboard />
+          <HomePage />
         </Route>
         <Route path={toLogin()}>
           <LoginPage />

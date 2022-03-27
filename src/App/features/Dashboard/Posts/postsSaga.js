@@ -1,6 +1,6 @@
-import { takeEvery, call, put } from "redux-saga/effects";
+import { takeEvery, call, put, select } from "redux-saga/effects";
 import { getExamplePosts } from "./getExamplePosts";
-import { setPosts, fetchExamplePosts} from "./postsSlice";
+import { setPosts, fetchExamplePosts, addPost } from "./postsSlice";
 
 function* fetchExamplePostsHandler() {
     try {
@@ -12,6 +12,6 @@ function* fetchExamplePostsHandler() {
     }
 }
 
-export function* postsSaga(){
+export function* postsSaga() {
     yield takeEvery(fetchExamplePosts.type, fetchExamplePostsHandler);
 }

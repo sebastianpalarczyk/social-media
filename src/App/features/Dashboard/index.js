@@ -4,7 +4,7 @@ import Section from "../../common/Section";
 import Naviation from "../../common/Navigation";
 import Container from "../../common/Container";
 import Posts from "./Posts";
-import AddNewPost from "./AddNewPost";
+import AddNewPost from "./Posts/AddNewPost";
 
 const Dashboard = () => {
   const primary = "primary";
