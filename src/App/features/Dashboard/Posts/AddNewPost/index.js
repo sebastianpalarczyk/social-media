@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { addPost } from "../postsSlice";
+import { addPost } from "./postSlice";
 import { useDispatch } from "react-redux";
 import { Form, Input, Button } from "./styled";
 

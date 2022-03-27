@@ -17,9 +17,6 @@ const postsSlice = createSlice({
         }],
     },
     reducers: {
-        addPost: (state, { payload: post }) => {
-            state.post = post;
-        },
         fetchExamplePosts: () => { },
         setPosts: (state, { payload: posts }) => {
             state.posts = posts;
@@ -30,7 +27,6 @@ const postsSlice = createSlice({
 })
 
 export const {
-    addPost,
     fetchExamplePosts,
     setPosts,
 } = postsSlice.actions;
