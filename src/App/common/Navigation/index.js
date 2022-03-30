@@ -1,5 +1,5 @@
 import React from "react";
-import { List, Item, Link, NavigationContainer } from "./styled";
+import { List, Item, RightItem, Link, RightLink, LeftLink, NavigationContainer } from "./styled";
 import { ReactComponent as HomepageIcon } from "../../images/homepage.svg";
 import { ReactComponent as Groups } from "../../images/groups.svg";
 import { ReactComponent as Watch } from "../../images/watch.svg";
@@ -16,7 +16,7 @@ const Navigation = () => {
     <NavigationContainer>
       <List>
         <Item>
-          <Link><Logo /></Link>
+          <LeftLink><Logo /></LeftLink>
         </Item>
         <Item>
           <Link><HomepageIcon /></Link>
@@ -25,12 +25,12 @@ const Navigation = () => {
           <Link><MarketPlace /></Link>
           <Link><Groups /></Link>
         </Item>
-        <Item>
-          <Link><Menu /></Link>
-          <Link><Messages /></Link>
-          <Link><Notifications /></Link>
-          <Link><Account /></Link>
-        </Item>
+        <RightItem>
+          <RightLink><Menu /></RightLink>
+          <RightLink><Messages /></RightLink>
+          <RightLink><Notifications /></RightLink>
+          <RightLink><Account /></RightLink>
+        </RightItem>
       </List>
     </NavigationContainer>
   )

@@ -9,7 +9,7 @@ export const NavigationContainer = styled.nav`
 
 export const List = styled.ul`
     display: grid;
-    grid-template-columns: 500px 2fr 500px;
+    grid-template-columns: 1fr 700px 1fr;
     margin: 0;
     padding: 0;
     border-bottom: solid white 2px;
@@ -24,10 +24,26 @@ export const Item = styled.li`
     border: solid white;
 `;
 
+export const RightItem = styled(Item)`
+    justify-content: right;
+`;
+
 export const Link = styled.span`
     margin: 10px 55px;
     cursor: pointer;
     flex-grow: 1;
+
+    @media (max-width: 1400px){
+        margin: 10px 44px;
+    }
+`;
+
+export const RightLink = styled(Link)`
+    margin: 10px;
+`;
+
+export const LeftLink = styled(Link)`
+    margin: 10px;
 `;
 
 
