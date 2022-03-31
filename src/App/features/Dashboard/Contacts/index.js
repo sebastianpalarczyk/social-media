@@ -1,6 +1,5 @@
 import React from "react";
-import Container from "../../../common/Container";
-import {Header} from "./styled";
+import { Container, Header, List, Item } from "./styled";
 
 const Contacts = () => {
     return (
@@ -8,7 +7,14 @@ const Contacts = () => {
             <Header>
                 Kontakty
             </Header>
-
+            <List>
+                <Item>
+                    Marek Nowak
+                </Item>
+                <Item>
+                    Zdzisław Kowalski
+                </Item>
+            </List>
         </Container>
     )
 }
