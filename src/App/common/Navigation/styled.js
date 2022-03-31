@@ -16,11 +16,17 @@ export const List = styled.ul`
     list-style: none;
 `;
 
+export const Label = styled.label`
+    display: block;
+    display: flex;
+    justify-content: center;
+    margin: 0px 10px;
+`;
+
 export const Item = styled.li`
     margin: 10px;
     font-size: 30px;
-    display: flex;
-    justify-content: center;
+    padding: 5px;
 
     &:hover{
         background-color: ${({theme}) => theme.color.darkGrey};
@@ -28,7 +34,7 @@ export const Item = styled.li`
     }
 `;
 
-export const RightItem = styled(Item)`
+export const RightLabel = styled(Label)`
     justify-content: right;
 `;
 
