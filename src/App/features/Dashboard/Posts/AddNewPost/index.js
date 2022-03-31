@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { addPost } from "./postSlice";
 import { useDispatch } from "react-redux";
-import { Form, Input, Button } from "./styled";
+import { Form, Input, InputPost, Button } from "./styled";
 
 const AddNewPost = () => {
     const [message, setMessage] = useState("");
@@ -21,14 +21,16 @@ const AddNewPost = () => {
 
     return (
         <Form onSubmit={onFormSubmit} encType="multipart/form-data">
-            <Input
+            <InputPost
                 value={message}
                 placeholder="O czym teraz myślisz?"
-                onChange={({ target }) => setMessage(target.value)} />
+                onChange={({ target }) => setMessage(target.value)}
+            />
             <Input
                 type="file"
                 value={file}
-                onChange={({ target }) => this.setFile(target)} />
+                onChange={({ target }) => this.setFile(target)}
+            />
             <Button>Dodaj post</Button>
         </Form>
     )

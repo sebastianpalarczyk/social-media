@@ -21,7 +21,11 @@ export const Item = styled.li`
     font-size: 30px;
     display: flex;
     justify-content: center;
-    border: solid white;
+
+    &:hover{
+        background-color: ${({theme}) => theme.color.darkGrey};
+        border-radius: 6px;
+    }
 `;
 
 export const RightItem = styled(Item)`
