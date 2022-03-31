@@ -21,10 +21,10 @@ export const Label = styled.label`
     display: flex;
     justify-content: center;
     margin: 0px 10px;
+    padding-top: 3px;
 `;
 
 export const Item = styled.li`
-    margin: 10px;
     font-size: 30px;
     padding: 5px;
 

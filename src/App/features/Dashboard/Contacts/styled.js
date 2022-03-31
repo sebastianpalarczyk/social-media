@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    border: solid white;
+    margin: 0;
 `;
 
 export const Header = styled.h4`

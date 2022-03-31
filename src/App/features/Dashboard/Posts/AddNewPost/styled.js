@@ -24,6 +24,9 @@ export const InputPost = styled.input`
    font-size: 20px;
    color: ${({ theme }) => theme.color.white};
    cursor: pointer;
+   ::placeholder{
+      color: ${({ theme }) => theme.color.white};
+   }
 
    &:active{
       border-color: ${({ theme }) => theme.color.lightGrey};
