@@ -5,6 +5,7 @@ import Naviation from "../../common/Navigation";
 import Container from "../../common/Container";
 import Posts from "./Posts";
 import AddNewPost from "./Posts/AddNewPost";
+import Contacts from "./Contacts";
 
 const Dashboard = () => {
   const primary = "primary";
@@ -15,7 +16,7 @@ const Dashboard = () => {
         <Section />
         <Section header={<AddNewPost />}
           body={<Posts />} />
-        <Section />
+        <Section body={<Contacts/>} />
       </Container>
     </Main>
   )

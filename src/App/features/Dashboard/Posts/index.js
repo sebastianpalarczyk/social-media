@@ -17,7 +17,7 @@ const Posts = () => {
                     <Header>
                         {post.message}
                     </Header>
-                    <File src={fantasy} alt="obrazek" width={450}/>
+                    <File src={fantasy} alt="obrazek" width={660}/>
                     <Comment>
                         {post.comment}
                     </Comment>
