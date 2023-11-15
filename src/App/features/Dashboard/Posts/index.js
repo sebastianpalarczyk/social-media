@@ -9,21 +9,27 @@ const Posts = () => {
     const { posts } = useSelector(selectPosts);
     console.log(posts)
 
-    return (
+    // if (posts.length === 0) {
+    //     return <NoPostsMessage>Brak dostępnych postów.</NoPostsMessage>;
+    // }
 
+    return (
         <>
             {posts.map(post => (
                 <Container key={post.id}>
                     <Header>
                         {post.message}
                     </Header>
-                    <File src={fantasy} alt="obrazek" width={660}/>
+                    {/* Wyświetl pliki dla danego posta */}
+                    {post.files.map(file => (
+                        <File key={file.id} src={file.url} alt={`Obrazek posta ${post.id}`} width={660} />
+                    ))}
+                    {/* <File src={fantasy} alt={`Obrazek posta ${post.id}`} width={660} /> */}
                     <Comment>
                         {post.comment}
                     </Comment>
                 </Container>
             ))}
-
         </>
     )
 }

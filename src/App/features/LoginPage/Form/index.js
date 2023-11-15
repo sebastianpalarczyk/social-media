@@ -7,6 +7,8 @@ const FormLogin = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
+    console.log(username)
+
     const dispatch = useDispatch();
 
     const onFormSubmit = (event) => {

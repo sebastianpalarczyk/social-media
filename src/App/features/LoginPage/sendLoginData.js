@@ -1,14 +1,22 @@
 import axios from "axios";
 
 export const sendLoginData = async (user) => {
-    const response = await axios.post('http://localhost:8080/login', {
-        username: user.username,
-        password: user.password,
-    })
+    try {
+        const response = await axios.post('http://localhost:8080/login', {
+            username: user.username,
+            password: user.password,
+        });
 
-    if (!response.ok) {
-        new Error(response.statusText);
+        console.log(user.username)
+        console.log(user.password)
+
+        if (response.status >= 200 && response.status < 300) {
+            return response.headers.authorization;
+        } else {
+            throw new Error(`Błąd logowania: ${response.statusText}`);
+        }
+    } catch (error) {
+        console.error('Wystąpił błąd podczas logowania:', error.message);
+        throw error;
     }
-
-    return response.headers.authorization;
-} 
+}

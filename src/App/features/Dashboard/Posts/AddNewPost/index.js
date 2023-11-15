@@ -1,22 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { addPost } from "./postSlice";
 import { useDispatch } from "react-redux";
 import { Form, Input, InputPost, Button } from "./styled";
 
 const AddNewPost = () => {
     const [message, setMessage] = useState("");
-    const [file, setFile] = useState("");
+    const fileInputRef = useRef(null);
 
     const dispatch = useDispatch();
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        console.log(file)
+        const formData = new FormData();
+        formData.append("message", message);
+        formData.append("file", fileInputRef.current.files[0]);
 
-        dispatch(addPost({
-            message,
-            file
-        }))
+        dispatch(addPost(formData));
     }
 
     return (
@@ -28,11 +27,11 @@ const AddNewPost = () => {
             />
             <Input
                 type="file"
-                value={file}
-                onChange={({ target }) => this.setFile(target)}
+                ref={fileInputRef}
             />
             <Button>Dodaj post</Button>
         </Form>
-    )
+    );
 }
+
 export default AddNewPost;
