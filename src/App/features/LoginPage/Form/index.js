@@ -7,26 +7,31 @@ const FormLogin = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    console.log(username)
-
     const dispatch = useDispatch();
 
-    const onFormSubmit = (event) => {
+    const onFormSubmit = async (event) => {
         event.preventDefault();
 
-        dispatch(addLogin({
-            username,
-            password
-        }));
+        try {
+            dispatch(addLogin({ username, password }));
+        } catch (error) {
+            console.error("Błąd podczas wysyłania akcji:", error);
+        }
     }
 
     return (
         <Form onSubmit={onFormSubmit}>
             <Input
+                id="username"
+                name="username"
+                autocomplete="current-username"
                 value={username}
                 placeholder="Adres e-mail"
                 onChange={({ target }) => setUsername(target.value)} />
             <Input
+                id="password"
+                name="password"
+                autocomplete="current-password"
                 value={password}
                 placeholder="Hasło"
                 onChange={({ target }) => setPassword(target.value)} />

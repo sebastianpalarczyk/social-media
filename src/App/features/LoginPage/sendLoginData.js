@@ -7,9 +7,6 @@ export const sendLoginData = async (user) => {
             password: user.password,
         });
 
-        console.log(user.username)
-        console.log(user.password)
-
         if (response.status >= 200 && response.status < 300) {
             return response.headers.authorization;
         } else {
@@ -20,3 +17,4 @@ export const sendLoginData = async (user) => {
         throw error;
     }
 }
+
