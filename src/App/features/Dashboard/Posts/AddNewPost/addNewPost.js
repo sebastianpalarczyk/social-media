@@ -12,10 +12,9 @@ export const addNewPost = async (formData) => {
     try {
         const response = await axios.post('http://localhost:8080/app/post', formData, { headers });
         console.log('Response:', response.data);
-        return response.data; // Możesz również zwrócić odpowiedź z funkcji
+        return response.data; 
     } catch (error) {
         console.error('Error:', error);
-        // Dodatkowa logika obsługi błędu
         throw new Error(error.response?.data?.message || 'Wystąpił błąd');
     }
 };

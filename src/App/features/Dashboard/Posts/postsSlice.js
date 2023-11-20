@@ -1,85 +1,31 @@
-// import { createSlice } from "@reduxjs/toolkit";
-
-// const postsSlice = createSlice({
-//     name: "posts",
-//     initialState: {
-//         posts: [{
-//             id: "1",
-//             message: "Content numer jeden",
-//             comment: "Comment numer jeden",
-
-//         },
-//         {
-//             id: "2",
-//             message: "Content numer dwa",
-//             comment: "Comment numer dwa",
-//         }],
-//     },
-
-//     reducers: {
-//         fetchExamplePosts: () => { },
-//         setPosts: (state, { payload: posts }) => {
-//             state.posts = posts;
-//         },
-
-//     },
-// })
-
-// export const {
-//     fetchExamplePosts,
-//     setPosts,
-// } = postsSlice.actions;
-
-// export const selectPosts = state => state.posts;
-
-// export default postsSlice.reducer;
-
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-
-// Asynchroniczna akcja Redux Thunk do pobierania postów
-export const fetchExamplePostsAsync = createAsyncThunk(
-  'posts/fetchExamplePostsAsync',
-  async () => {
-    try {
-      const response = await axios.get('http://localhost:8080/app/posts');
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
-  }
-);
+import { createSlice } from '@reduxjs/toolkit';
 
 const postsSlice = createSlice({
-  name: "posts",
+  name: 'posts',
   initialState: {
     posts: [],
-    status: 'idle',
+    loading: false,
     error: null,
   },
   reducers: {
-    setPosts: (state, { payload: posts }) => {
-      state.posts = posts;
+    fetchPostsStart(state) {
+      state.loading = true;
+      state.error = null;
     },
-  },
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchExamplePostsAsync.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(fetchExamplePostsAsync.fulfilled, (state, { payload: posts }) => {
-        state.status = 'succeeded';
-        state.posts = posts;
-      })
-      .addCase(fetchExamplePostsAsync.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.error.message;
-      });
+    fetchPostsSuccess(state, action) {
+      state.loading = false;
+      state.posts = action.payload;
+    },
+    fetchPostsFailure(state, action) {
+      state.loading = false;
+      state.error = action.payload;
+    },
   },
 });
 
-export const { setPosts,fetchExamplePosts } = postsSlice.actions;
+export const fetchPosts = () => ({
+  type: 'posts/fetchPosts',
+});
 
-export const selectPosts = state => state.posts;
-
+export const { fetchPostsStart, fetchPostsSuccess, fetchPostsFailure } = postsSlice.actions;
 export default postsSlice.reducer;

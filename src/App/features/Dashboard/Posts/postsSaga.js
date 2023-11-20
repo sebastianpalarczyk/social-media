@@ -1,33 +1,17 @@
-// import { takeEvery, call, put, select } from "redux-saga/effects";
-// import { getExamplePosts } from "./getExamplePosts";
-// import { setPosts, fetchExamplePosts } from "./postsSlice";
+import { takeLatest, put, call } from 'redux-saga/effects';
+import { fetchPostsStart, fetchPostsSuccess, fetchPostsFailure } from './postsSlice';
+import { getPosts } from './getExamplePosts';
 
-// function* fetchExamplePostsHandler() {
-//     try {
-//         const examplePosts = yield call(getExamplePosts);
-//         yield put(setPosts(examplePosts));
-
-//     } catch (error) {
-//         yield call(alert, error);
-//     }
-// }
-
-// export function* postsSaga() {
-//     yield takeEvery(fetchExamplePosts.type, fetchExamplePostsHandler);
-// }
-
-import { takeEvery, call, put } from "redux-saga/effects";
-import { fetchExamplePostsAsync, setPosts } from "./postsSlice";
-
-function* fetchExamplePostsHandler() {
+function* fetchPostsAsync() {
   try {
-    const examplePosts = yield call(fetchExamplePostsAsync);
-    yield put(setPosts(examplePosts));
+    yield put(fetchPostsStart());
+    const posts = yield call(getPosts);
+    yield put(fetchPostsSuccess(posts));
   } catch (error) {
-    yield call(alert, error);
+    yield put(fetchPostsFailure(error.message));
   }
 }
 
 export function* postsSaga() {
-  yield takeEvery(fetchExamplePostsAsync, fetchExamplePostsHandler);
+  yield takeLatest('posts/fetchPosts', fetchPostsAsync);
 }
